@@ -15,7 +15,7 @@ end
 
 package package_name do
   source package_local_path
-  provider Chef::Provider::Package::Rpm
+  provider Chef::Provider::Package::Dpkg
   notifies :run, 'execute[reconfigure-chef-server]', :immediately
 end
 

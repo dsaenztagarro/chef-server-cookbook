@@ -1,2 +1,3 @@
 default['chef-server']['url'] = \
-  'https://packagecloud.io/chef/stable/packages/el/5/chef-server-core-12.1.1-1.el5.x86_64.rpm/download'
+  'https://web-dl.packagecloud.io/chef/stable/packages/ubuntu/trusty/' \
+  'chef-server-core_12.1.2-1_amd64.deb'
