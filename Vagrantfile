@@ -73,7 +73,7 @@ Vagrant.configure(2) do |config|
 
   config.vm.provision 'chef_zero' do |chef|
     # Specify the local paths where Chef data is stored
-    chef.cookbooks_path = "~/Projects/chef-repo/cookbooks"
+    chef.cookbooks_path = "~/Projects/chef/cookbooks"
     # chef.data_bags_path = 'data_bags'
     # chef.roles_path = 'roles'
 
