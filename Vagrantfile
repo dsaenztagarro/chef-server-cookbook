@@ -48,7 +48,7 @@ Vagrant.configure(2) do |config|
     # vb.gui = true
 
     # Customize the amount of memory on the VM:
-    v.name = 'chef-server'
+    vb.name = 'chef-server'
     vb.memory = "2048"
   end
 
@@ -79,7 +79,6 @@ Vagrant.configure(2) do |config|
 
     # Add a recipe
     chef.add_recipe 'chef-server'
-    chef.add_recipe 'chef-server::after_install'
 
     # Or maybe a role
     # chef.add_role 'web'
