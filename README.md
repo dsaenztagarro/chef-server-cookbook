@@ -1,4 +1,10 @@
-# chef-server
+# Installing chef-server
+
+```
+chef-solo 
+```
+
+# test-kitchen commands
 
 Install chef-server into vagrant box
 
