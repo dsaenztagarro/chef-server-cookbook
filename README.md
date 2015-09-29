@@ -1,7 +1,18 @@
 # Installing chef-server
 
+[install server](https://docs.chef.io/install_server.html)
+
 ```
-chef-solo 
+vagrant up
+```
+
+# Generating chef-repo
+
+```
+rvm use system ; eval "$(chef shell-init `basename $SHELL`)"
+chef generate app chef-repo
+chef gem install knife-solo
+chef-apply ~/Projects/
 ```
 
 # test-kitchen commands
