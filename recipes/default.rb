@@ -32,7 +32,8 @@ else
   end
 end
 
-dpkg_package package_path do
+dpkg_package package_name do
+  source package_path
   notifies :run, 'execute[reconfigure-chef-server]', :immediately
   notifies :run, 'execute[user-create]', :immediately
   notifies :run, 'execute[org-create]', :immediately
@@ -40,9 +41,8 @@ end
 
 execute 'reconfigure-chef-server' do
   command 'chef-server-ctl reconfigure'
-  # action :nothing
+  action :nothing
 end
-
 
 execute 'user-create' do
   command "chef-server-ctl user-create " \
@@ -52,7 +52,7 @@ execute 'user-create' do
     "#{admin['email']} " \
     "#{admin['password']} " \
     "--filename #{admin['rsa_private_key']}"
-  # action :nothing
+  action :nothing
 end
 
 execute 'org-create' do
@@ -61,5 +61,5 @@ execute 'org-create' do
     "#{org['full-name']} " \
     "--association_user #{admin['user-name']} " \
     "--filename #{org['rsa_private_key']}"
-  # action :nothing
+  action :nothing
 end
