@@ -1,9 +1,16 @@
 # Installing chef-server
 
-[install server](https://docs.chef.io/install_server.html)
+## Local (Vagrant box)
 
 ```
 vagrant up
+
+# Get vagrant box ip
+vagrant ssh -c "ip address show eth0 | grep 'inet ' | sed -e 's/^.*inet//' -e 's/\/.*$//'"
+```
+
+## Remote server
+
 ```
 
 # Generating chef-repo
@@ -29,3 +36,7 @@ kitchen destroy <platform>
 Where you should replace `<platform>` with `server-ubuntu-1404`
 
 Based on [official documentation](https://docs.chef.io/install_server.html)
+
+# Documentation
+
+[install server](https://docs.chef.io/install_server.html)
