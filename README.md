@@ -7,6 +7,11 @@ vagrant up
 
 # Get vagrant box ip
 vagrant ssh -c "ip address show eth0 | grep 'inet ' | sed -e 's/^.*inet//' -e 's/\/.*$//'"
+
+# Check installation
+vagrant ssh
+sudo chef-server-ctl status
+sudo chef-server-ctl test
 ```
 
 ## Remote server
