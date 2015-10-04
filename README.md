@@ -1,18 +1,36 @@
 # Installing chef-server
 
-## Local (Vagrant box)
+## Local 
+
+### Chef-Server (Vagrant box)
 
 ```
-vagrant up
+# /etc/hosts
 
-# Get vagrant box ip
+192.168.0.10 chefserver.local
+```
+
+Run `vagrant up`.
+
+- `chef-server` recipe installs chef-server and creates an organization and an
+  admin user.
+- `chef-server::setup_chef_manage` recipe installs chef sever webui
+
+Check network config:
+
+```
 vagrant ssh -c "ip address show eth0 | grep 'inet ' | sed -e 's/^.*inet//' -e 's/\/.*$//'"
+```
 
-# Check installation
+Check installation:
+
+```
 vagrant ssh
 sudo chef-server-ctl status
 sudo chef-server-ctl test
 ```
+
+### Workstation (Host)
 
 ## Remote server
 

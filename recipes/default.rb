@@ -32,6 +32,10 @@ else
   end
 end
 
+execute "apt-get-update" do
+  command "apt-get update"
+end
+
 dpkg_package package_name do
   source package_path
   notifies :run, 'execute[reconfigure-chef-server]', :immediately

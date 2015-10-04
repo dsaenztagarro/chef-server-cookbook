@@ -1,3 +1,6 @@
+# Configuration settings for web-based interface
+# https://docs.chef.io/config_rb_manage.html
+
 execute 'install-opscode-manage' do
   command 'chef-server-ctl install opscode-manage'
 end
