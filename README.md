@@ -32,8 +32,18 @@ sudo chef-server-ctl test
 
 ### Workstation (Host)
 
+
 ## Remote server
 
+```
+# digitalocean droplet
+ssh root@<ip.digitalocean.droplet>
+adduser admin
+gpasswd -a admin sudo
+
+# workstation
+ssh-keygen
+ssh-copy-id admin@<ip.digitalocean.droplet>
 ```
 
 # Generating chef-repo
