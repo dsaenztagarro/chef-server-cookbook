@@ -10,11 +10,11 @@ default['chef-server']['admin'] = {
   'last-name' => 'Local',
   'email' => 'user.local@gmail.com',
   'password' => '123456',
-  'rsa_private_key' => '/home/vagrant/userlocal.pem'
+  'rsa_private_key' => '/vagrant/permissions/userlocal.pem'
 }
 
 default['chef-server']['organization'] = {
   'org-name' => 'orglocal',
   'full-name' => 'Org Local',
-  'rsa_private_key' => '/home/vagrant/orglocal-validator.pem'
+  'rsa_private_key' => '/vagrant/permissions/orglocal-validator.pem'
 }
