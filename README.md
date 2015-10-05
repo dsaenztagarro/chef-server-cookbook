@@ -44,6 +44,8 @@ gpasswd -a admin sudo
 # workstation
 ssh-keygen
 ssh-copy-id admin@<ip.digitalocean.droplet>
+ssh-add
+ssh -A <user>@<ip.digitalocean.droplet>
 ```
 
 # Generating chef-repo
