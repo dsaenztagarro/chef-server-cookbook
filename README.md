@@ -41,6 +41,11 @@ ssh root@<ip.digitalocean.droplet>
 adduser admin
 gpasswd -a admin sudo
 
+ssh -A admin@<ip.digitalocean.droplet>
+wget https://web-dl.packagecloud.io/chef/stable/packages/ubuntu/trusty/chef-server-core_12.2.0-1_amd64.deb
+dpkg -i chef-server-core_12.2.0-1_amd64.deb 
+
+
 # workstation
 ssh-keygen
 ssh-copy-id admin@<ip.digitalocean.droplet>
