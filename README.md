@@ -44,13 +44,24 @@ gpasswd -a admin sudo
 ssh -A admin@<ip.digitalocean.droplet>
 wget https://web-dl.packagecloud.io/chef/stable/packages/ubuntu/trusty/chef-server-core_12.2.0-1_amd64.deb
 dpkg -i chef-server-core_12.2.0-1_amd64.deb 
+```
 
-
+```
 # workstation
+
+# ssh access to digitalocean droplet
 ssh-keygen
 ssh-copy-id admin@<ip.digitalocean.droplet>
 ssh-add
 ssh -A <user>@<ip.digitalocean.droplet>
+
+# download chef repo certificates
+scp admin@<ip.digitalocean.droplet>:/home/admin/admin.pem .chef/
+scp admin@<ip.digitalocean.droplet>:/home/admin/digitalocean-validator.pem .chef/
+knife ssl fetch
+
+# test
+knife client list
 ```
 
 # Generating chef-repo
