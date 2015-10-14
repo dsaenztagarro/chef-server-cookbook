@@ -62,6 +62,13 @@ knife ssl fetch
 
 # test
 knife client list
+
+# bootstrap node
+knife bootstrap node_domain_or_IP -x demo -A -P password --sudo --use-sudo-password -N name
+
+# verify bootstraped node
+knife client list
+knife node list
 ```
 
 # Generating chef-repo
