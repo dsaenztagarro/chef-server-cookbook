@@ -5,16 +5,16 @@ default['chef-server']['url'] = \
 default['chef-server']['file_download_path'] = '/vagrant/downloads'
 
 default['chef-server']['admin'] = {
-  'user-name' => 'userlocal',
-  'first-name' => 'User',
-  'last-name' => 'Local',
-  'email' => 'user.local@gmail.com',
+  'user-name' => 'admin',
+  'first-name' => 'admin',
+  'last-name' => 'admin',
+	'email' => 'admin@vagrant.es',
   'password' => '123456',
-  'rsa_private_key' => '/vagrant/permissions/userlocal.pem'
+  'rsa_private_key' => '/vagrant/permissions/admin.pem'
 }
 
 default['chef-server']['organization'] = {
-  'org-name' => 'orglocal',
-  'full-name' => 'Org Local',
-  'rsa_private_key' => '/vagrant/permissions/orglocal-validator.pem'
+  'org-name' => 'vagrant',
+  'full-name' => 'Vagrant VMs',
+  'rsa_private_key' => '/vagrant/permissions/vagrant-validator.pem'
 }
